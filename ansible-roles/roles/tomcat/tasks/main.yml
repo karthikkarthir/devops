@@ -1,0 +1,8 @@
+---
+  - name: add the os specific variables
+    include_vars: "{{ item }}"
+    with_first_round:
+      - "{{ ansible_distribution }}{{ ansible_distribution_major_version }}.yml"
+      - "{{ ansible_os_family }}.yml"
+  
+  - include_tasks: "tomcat-setup-{{ ansible_os_family }}.yml"

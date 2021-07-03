@@ -1,0 +1,14 @@
+---
+  - name: Tomcat Application Server Installation
+    hosts: tomcat-nodes
+    become: yes
+    become_method: sudo
+    remote_user: ubuntu 
+    vars:
+      tomcat_ver: 9.0.30
+      ui_manager_user: hariharanep
+      ui_manager_pass: Hariharanep%4498
+      ui_admin_username: hariharanep
+      ui_admin_pass: Hariharanep%4498
+    roles:
+      - tomcat
